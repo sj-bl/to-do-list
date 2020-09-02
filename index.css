@@ -1,0 +1,181 @@
+@font-face {
+  font-family: "phenomena light", Arial, Helvetica, sans-serif;
+  src: url(/fonts/Phenomena-Light.otf);
+}
+@font-face {
+  font-family: "phenomena", Arial, Helvetica, sans-serif;
+  src: url(/fonts/Phenomena-Black.otf.otf);
+}
+html {
+  font-family: "phenomena light", Arial, Helvetica, sans-serif;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(120deg, rgb(142, 45, 226), rgb(74, 0, 224));
+  /* background-color: #e0e5ec; */
+  min-height: 100vh;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+header h1 {
+  font-family: "phenomena", Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+}
+
+header,
+.input-container {
+  min-height: 20vh;
+}
+.input-container button,
+.input-container input {
+  border: none;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container input {
+  width: 30vw;
+  height: 100%;
+  font-size: 1.65rem;
+  border-radius: 5px 0 0 5px;
+  font-family: "phenomena", Arial, Helvetica, sans-serif;
+}
+.input-container button i {
+  font-size: 2rem;
+  color: rgb(74, 0, 224) /*rgb(142, 45, 226)*/;
+}
+.input-container button {
+  padding: 0.5rem 0.5rem;
+  border-radius: 0 5px 5px 0;
+  height: 100%;
+}
+.input-container button:focus {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.input-container button i:active {
+  color: rgb(58, 0, 175);
+}
+.input-container input:focus {
+  outline: none;
+  border: none;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*to do list items */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 3rem;
+}
+.todo {
+  display: flex;
+  width: 45vw;
+  font-size: 1.5rem;
+  background-color: #fff;
+  margin-top: 0.5rem;
+  padding: 0.8rem 0 0.8rem 0.8rem;
+  border-radius: 5px;
+  overflow: hidden;
+  transform: translateX(-80%);
+
+  animation: getin 0.5s forwards cubic-bezier(1, 1, 0, 1);
+}
+.todo li {
+  margin-right: auto;
+}
+.todo button {
+  padding: 0.5rem 1rem;
+  margin-top: -0.8rem;
+  margin-bottom: -0.8rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  font-size: 1.5rem;
+}
+.trash-btn {
+  background-color: #ff304f;
+  color: white;
+}
+.checked-btn {
+  background-color: #17b978;
+  color: white;
+}
+.fa-check,
+.fa-trash {
+  pointer-events: none;
+}
+.complete {
+  opacity: 0.5;
+
+  text-decoration: line-through;
+}
+.getout {
+  animation: getout 0.2s forwards cubic-bezier(1, 1, 0, 1);
+}
+select {
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.65rem;
+  font-family: "phenomena light", Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  margin-left: 2rem;
+}
+.filter {
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+}
+.filter::after {
+  content: "\25bc";
+  position: absolute;
+  top: -0%;
+  right: 0%;
+  height: 100%;
+  pointer-events: none;
+  padding: 1rem;
+  background-color: #4a00e0;
+  color: white;
+  /* background-color: white; */
+}
+
+@keyframes getin {
+  from {
+    transform: translateX(-80%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes getout {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(80%);
+    opacity: 0;
+  }
+}
